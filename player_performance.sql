@@ -1,0 +1,20 @@
+CREATE TABLE `player_performance` (
+  `performance_id` int NOT NULL,
+  `match_id` int NOT NULL,
+  `player_id` int NOT NULL,
+  `Innings` int NOT NULL,
+  `Runs_scored` varchar(45) NOT NULL,
+  `Balls_faced` varchar(45) NOT NULL,
+  `Fours` varchar(45) NOT NULL,
+  `Sixers` varchar(45) NOT NULL,
+  `Catches` int NOT NULL,
+  `Wickets_taken` varchar(45) NOT NULL,
+  `Overs_bowled` varchar(45) NOT NULL,
+  `Runs` int NOT NULL,
+  `Runouts` int NOT NULL,
+  PRIMARY KEY (`performance_id`),
+  KEY `fk_player_id_idx` (`player_id`),
+  KEY `fk_match_id_idx` (`match_id`),
+  CONSTRAINT `fk_match_id` FOREIGN KEY (`match_id`) REFERENCES `matches` (`Match_id`),
+  CONSTRAINT `fk_player_id` FOREIGN KEY (`player_id`) REFERENCES `players` (`player_id`)
+) 
